@@ -1,17 +1,20 @@
-<script>
-import HelloWorld from './components/HelloWorld.vue'
-/* import Navbar from "@/components/Navbar.vue" */
-</script>
-
 <template>
-<div class="bg-gray-600 min-h-screen">
-    <div class="container mx-auto">
-    
-        <h1 class="bg-red-600 text-white   pt-10">as22334 2</h1>
-    </div>
+<div class="container mx-auto">
+    <nav>
+        <router-link to="/">Home</router-link>
+        <router-link to="/login">Login</router-link>
+    </nav>
 </div>
+
+<router-view />
 </template>
 
-<style scoped>
- 
-</style>
+<script>
+export default {
+    name: "App",
+};
+</script>
+
+<style>
+  
+  </style>
