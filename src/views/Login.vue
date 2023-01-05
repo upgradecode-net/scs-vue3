@@ -43,7 +43,7 @@
 </div>
 </template>
 
-<script>
+<script setup>
 import {
     auth
 } from "../firebase"
@@ -52,31 +52,23 @@ import {
     signInWithEmailAndPassword
 } from "firebase/auth";
 
-export default {
-    name: "login",
-    data() {
-        return {
-            email: "",
-            password: ""
-        }
-    },
-    methods: {
-        ingresar(payload) {
-            signInWithEmailAndPassword(auth, payload.email, payload.password)
-                .then((userCredential) => {
-                    // Signed in 
+const email="";
+const password="";
 
-                    console.log("Listo");
-                    const user = userCredential.user;
 
-                    // ...
-                })
-                .catch((error) => {
-                    console.log(error.message);
-                });
+const ingresar = (payload) => {
+    signInWithEmailAndPassword(auth, payload.email, payload.password)
+        .then((userCredential) => {
+            // Signed in 
 
-        }
-    },
+            console.log("Listo");
+            const user = userCredential.user;
+
+            // ...
+        })
+        .catch((error) => {
+            console.log(error.message);
+        })
 }
 </script>
 
