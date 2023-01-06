@@ -4,7 +4,7 @@
 </script>
 
 <template>
-<aside class="w-64 fixed left-0 top-0 " aria-label="Sidebar">
+<aside class="w-64 fixed " aria-label="Sidebar">
     <div class="px-3 min-h-screen py-4 overflow-y-auto rounded bg-gray-50 dark:bg-gray-800">
         <ul class="space-y-2">
             <li>
