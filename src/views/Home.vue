@@ -39,7 +39,7 @@ const agregarDatos = async (payload) => {
     <!-- Modal toggle -->
 
     <!-- Main modal -->
-    <div v-if="agregarEmpleadoModal" id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 ">
+    <div v-if="agregarEmpleadoModal" id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-1/2 left-1/2  -translate-x-1/2 -translate-y-1/2 w-1/2">
         <div class="relative w-full h-full max-w-2xl md:h-auto">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
