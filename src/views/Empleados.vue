@@ -94,9 +94,13 @@ const eliminarEmpleado = async (payload) => {
 <template>
     <div class=" ">
         <Sidebar></Sidebar>
+    <div class=" ">
+        <Sidebar></Sidebar>
 
         <!-- Modal toggle -->
+        <!-- Modal toggle -->
 
+        <!-- Main modal -->
         <!-- Main modal -->
 
         <div v-if="agregarEmpleadoModal" id="defaultModal" aria-hidden="true"
@@ -291,5 +295,6 @@ const eliminarEmpleado = async (payload) => {
 
         </div>
 
+    </div>
     </div>
 </template>
