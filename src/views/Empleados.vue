@@ -17,7 +17,7 @@ const apellido = ref("")
 const email = ref("")
 const whatsapp = ref("")
 const empleado = ref({})
-const oldId=ref("")
+const oldId = ref("")
 
 const todos = useCollection(collection(db, 'users'))
 
@@ -53,9 +53,9 @@ const editarEmpleado = async (payload) => {
 
     if (docSnap.exists()) {
         console.log("Document data:", docSnap.data());
-         
+
         empleado.value = docSnap.data();
-        oldId.value=payload.id
+        oldId.value = payload.id
         console.log(oldId.value)
     } else {
         // doc.data() will be undefined in this case
@@ -92,19 +92,12 @@ const eliminarEmpleado = async (payload) => {
 </script>
 
 <template>
+
     <div class=" ">
         <Sidebar></Sidebar>
-    <div class=" ">
-        <Sidebar></Sidebar>
-
-        <!-- Modal toggle -->
-        <!-- Modal toggle -->
-
-        <!-- Main modal -->
-        <!-- Main modal -->
 
         <div v-if="agregarEmpleadoModal" id="defaultModal" aria-hidden="true"
-            class="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50">
+            class="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 w-1/2">
             <div class="relative w-full h-full max-w-2xl md:h-auto">
                 <!-- Modal content -->
                 <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
@@ -136,17 +129,17 @@ const eliminarEmpleado = async (payload) => {
 
                         <div id="">
                             <label class="block">Apellido </label>
-                            <input required v-model="apellido" class="px-2 py-2 border rounded " type="text">
+                            <input required v-model="apellido" class="px-2 py-2 border rounded w-full " type="text">
                         </div>
 
                         <div id="">
                             <label class="block">Email</label>
-                            <input v-model="email" class="px-2 py-2 border rounded " type="text">
+                            <input v-model="email" class="px-2 py-2 border rounded w-full " type="text">
                         </div>
 
                         <div id="">
                             <label class="block">Whatsapp </label>
-                            <input v-model="whatsapp" class="px-2 py-2 border rounded " type="text">
+                            <input v-model="whatsapp" class="px-2 py-2 border rounded w-full" type="text">
                         </div>
 
                     </div>
@@ -216,8 +209,7 @@ const eliminarEmpleado = async (payload) => {
                     <!-- Modal footer -->
                     <div
                         class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                        <button  @click="actualizarEmpleado()"
-                            data-modal-hide="defaultModal"
+                        <button @click="actualizarEmpleado()" data-modal-hide="defaultModal"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Editar</button>
                         <button @click="editarEmpleadoModal = !editarEmpleadoModal" data-modal-hide="defaultModal"
                             type="button"
@@ -296,5 +288,5 @@ const eliminarEmpleado = async (payload) => {
         </div>
 
     </div>
-    </div>
+
 </template>
