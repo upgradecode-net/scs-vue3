@@ -23,7 +23,7 @@ const imagen = ref("")
 
 const premios = useCollection(collection(db, 'premios'))
 
-const agregarPremio = async(payload) => {
+const agregarPremio = async (payload) => {
     console.log("Funcionando")
     try {
         const docRef = await addDoc(collection(db, "premios"), {
@@ -34,7 +34,7 @@ const agregarPremio = async(payload) => {
 
         });
 
-        
+
         agregarPremioModal.value = !agregarPremioModal.value
 
         console.log("Document written with ID: ", docRef.id);
@@ -90,12 +90,12 @@ const subirImagen = () => {
 
 const eliminarPremio = async (payload) => {
 
-if (confirm("Estas seguro pa?")) {
-    await deleteDoc(doc(db, "premios", payload.id));
-    console.log("Eliminado")
-} else {
+    if (confirm("Estas seguro pa?")) {
+        await deleteDoc(doc(db, "premios", payload.id));
+        console.log("Eliminado")
+    } else {
 
-}
+    }
 
 }
 
@@ -177,8 +177,7 @@ if (confirm("Estas seguro pa?")) {
                     <!-- Modal footer -->
                     <div
                         class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                        <button @click="agregarPremio({ nombre, puntos, stock, imagen })"
-                            data-modal-hide="defaultModal"
+                        <button @click="agregarPremio({ nombre, puntos, stock, imagen })" data-modal-hide="defaultModal"
                             class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Agregar</button>
                         <button @click="agregarPremioModal = !agregarPremioModal" data-modal-hide="defaultModal"
                             type="button"
