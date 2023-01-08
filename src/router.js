@@ -23,6 +23,11 @@ const routes = [
 		name: 'premios',
         component: () => import(/* webpackChunkName: "about" */ '../src/views/Premios.vue')
 	},
+    {
+		path: '/catalogo',
+		name: 'catalogo',
+        component: () => import(/* webpackChunkName: "about" */ '../src/views/Catalogo.vue')
+	},
 ];
 
 const router = createRouter({
