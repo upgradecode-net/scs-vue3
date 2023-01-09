@@ -106,10 +106,6 @@ const eliminarPremio = async (payload) => {
 </script>
 
 <template>
-
-
-    <Sidebar></Sidebar>
-
     <div v-if="agregarPremioModal" id="defaultModal" aria-hidden="true"
         class="fixed top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 z-50 w-1/2">
         <div class="relative w-full h-full max-w-2xl md:h-auto">
@@ -190,72 +186,78 @@ const eliminarPremio = async (payload) => {
     </div>
 
 
+    <div class="flex">
+        <Sidebar></Sidebar>
+        <main class="w-full  pt-10">
 
-    <div class="container mx-auto pl-64 pt-10">
+            <div class="mx-3">
+                <div class="flex justify-end ">
+                    <button @click="agregarPremioModal = !agregarPremioModal"
+                        class="bg-teal-900 text-white px-2 py-1 rounded">
+                        Agregar
+                    </button>
+                </div>
 
-        <div class="mx-3">
-            <div class="flex justify-end ">
-                <button @click="agregarPremioModal = !agregarPremioModal"
-                    class="bg-teal-900 text-white px-2 py-1 rounded">
-                    Agregar
-                </button>
+                <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
+                    <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+                        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+                            <tr>
+                                <th scope="col" class="px-6 py-3">
+                                    Product name
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Color
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Category
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Price
+                                </th>
+                                <th scope="col" class="px-6 py-3">
+                                    Action
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr v-for="premio in premios" :key="premio.id"
+                                class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+                                <th scope="row"
+                                    class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                    {{ premio.nombre }}
+                                </th>
+                                <td class="px-6 py-4">
+                                    {{ premio.puntos }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ premio.stock }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    {{ premio.stock }}
+                                </td>
+                                <td class="px-6 py-4">
+                                    <button @click="editarEmpleado(premio)"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</button>
+                                    <button @click="eliminarPremio(premio)"
+                                        class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</button>
+                                </td>
+                            </tr>
+
+
+
+
+                        </tbody>
+                    </table>
+                </div>
+
             </div>
 
-            <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-6">
-                <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-                    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
-                        <tr>
-                            <th scope="col" class="px-6 py-3">
-                                Product name
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Color
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Category
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Price
-                            </th>
-                            <th scope="col" class="px-6 py-3">
-                                Action
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr v-for="premio in premios" :key="premio.id"
-                            class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-                            <th scope="row"
-                                class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                                {{ premio.nombre }}
-                            </th>
-                            <td class="px-6 py-4">
-                                {{ premio.puntos }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ premio.stock }}
-                            </td>
-                            <td class="px-6 py-4">
-                                {{ premio.stock }}
-                            </td>
-                            <td class="px-6 py-4">
-                                <button @click="editarEmpleado(premio)"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Editar</button>
-                                <button @click="eliminarPremio(premio)"
-                                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Eliminar</button>
-                            </td>
-                        </tr>
-
-
-
-
-                    </tbody>
-                </table>
-            </div>
-
-        </div>
-
+        </main>
     </div>
+
+
+
+
 
 
 </template>
