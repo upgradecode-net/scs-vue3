@@ -113,7 +113,7 @@ const eliminarPremio = async (payload) => {
     
     <AgregarPremio  :agregarPremioModal="agregarPremioModal" @emitPremioModal="emitPremioModal"    />
 
-    {{ agregarPremioModal }}
+ 
 
     <div class="flex">
         <Sidebar></Sidebar>

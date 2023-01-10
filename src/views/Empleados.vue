@@ -1,5 +1,5 @@
 <script setup>
-import { ref } from "vue"
+import { ref, computed } from "vue"
 import { db } from "../firebase"
 import { doc, getDoc, deleteDoc, collection, addDoc, setDoc, query, where } from "firebase/firestore"
 
@@ -19,11 +19,19 @@ const email = ref("")
 const whatsapp = ref("")
 const empleado = ref({})
 const oldId = ref("")
+const buscar = ref("")
 
 const empleados = useCollection(collection(db, 'empleados'))
 /* const empleadosFilter = useCollection(collection(db, 'empleados').where("nombre", "==", "Claudio") ) */
 
 
+const buscarEmpleado = computed(() => {
+
+    return empleados.value.filter(item => {
+        return item.nombre.toLowerCase().includes(buscar.value.toLowerCase())
+    })
+
+})
 
 const agregarDatos = async (payload) => {
     console.log("Funcionando")
@@ -278,12 +286,20 @@ const eliminarEmpleado = async (payload) => {
 
 
     <div class="flex ">
+
+
         <Sidebar></Sidebar>
 
         <main class="w-full p-3">
 
             <div class="mx-3">
-                <div class="flex justify-end ">
+                <div class="flex justify-between space-x-2 ">
+
+
+                    <input placeholder="Buscar" required v-model="buscar" class="px-2 py-2 border rounded w-full "
+                        type="text">
+
+
                     <button @click="agregarEmpleadoModal = !agregarEmpleadoModal"
                         class="bg-teal-900 text-white px-2 py-1 rounded">
                         Agregar
@@ -312,7 +328,7 @@ const eliminarEmpleado = async (payload) => {
                             </tr>
                         </thead>
                         <tbody>
-                            <tr v-for="empleado in empleados" :key="empleado.id"
+                            <tr v-for="empleado in buscarEmpleado" :key="empleado.id"
                                 class="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                                 <th scope="row"
                                     class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
