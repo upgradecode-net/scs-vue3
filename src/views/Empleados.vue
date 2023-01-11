@@ -33,7 +33,8 @@ const buscarEmpleado = computed(() => {
         
         return item.nombre.toLowerCase().includes(buscar.value.toLowerCase()) ||
         item.apellido.toLowerCase().includes(buscar.value.toLowerCase()) ||
-        item.whatsapp.includes(buscar.value)
+        item.whatsapp.includes(buscar.value) ||
+        item.email.toLowerCase().includes(buscar.value.toLowerCase())
     })
 
 })
