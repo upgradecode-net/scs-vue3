@@ -27,8 +27,13 @@ const empleados = useCollection(collection(db, 'empleados'))
 
 const buscarEmpleado = computed(() => {
 
+    
+
     return empleados.value.filter(item => {
-        return item.nombre.toLowerCase().includes(buscar.value.toLowerCase())
+        
+        return item.nombre.toLowerCase().includes(buscar.value.toLowerCase()) ||
+        item.apellido.toLowerCase().includes(buscar.value.toLowerCase()) ||
+        item.whatsapp.includes(buscar.value)
     })
 
 })
