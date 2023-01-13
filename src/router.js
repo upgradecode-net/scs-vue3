@@ -28,6 +28,11 @@ const routes = [
 		name: 'catalogo',
         component: () => import(/* webpackChunkName: "about" */ '../src/views/Catalogo.vue')
 	},
+	{
+		path: '/login-2',
+		name: 'login-2',
+        component: () => import(/* webpackChunkName: "about" */ '../src/views/Login-2.vue')
+	}
 ];
 
 const router = createRouter({
