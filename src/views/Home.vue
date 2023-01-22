@@ -11,7 +11,7 @@ import Sidebar from "../components/Sidebar.vue"
 
         
 
-        <main class="w-full p-3">
+        <main class="w-full p-3 bg-white">
      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Distinctio, optio sunt. Vitae eligendi iure, error placeat quasi nam voluptate officiis, earum magni esse blanditiis eaque delectus voluptatum fugit vero praesentium.
      Saepe, in officiis repellat quo magni aliquid veniam repellendus eum quisquam recusandae illum esse quas tempore! Repellendus odit dolores, asperiores possimus, aperiam molestiae reiciendis doloribus nihil eveniet deserunt consequuntur laborum.
      Dicta possimus numquam ab quia? Sint, voluptatibus! Sequi voluptates qui praesentium nemo iste fuga a, error eius odit hic repellat. Doloremque sapiente assumenda illo fugit aliquam. Magnam expedita quod sint!

@@ -1,4 +1,6 @@
 <script setup>
+import {useRouter} from "vue-router";
+
 import {
     auth
 } from "../firebase"
@@ -7,6 +9,8 @@ import {
     signInWithEmailAndPassword
 } from "firebase/auth";
 
+
+const router=useRouter();
 const email = "";
 const password = "";
 
@@ -16,6 +20,7 @@ const ingresar = (payload) => {
             // Signed in 
 
             console.log("Listo");
+            router.push("/")
             const user = userCredential.user;
 
             // ...
