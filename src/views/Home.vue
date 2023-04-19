@@ -1,6 +1,5 @@
 <script setup>
     import Sidebar from "../components/Sidebar.vue"
-    import Prueba from "../components/prueba.vue"
 </script>
 
 <template>
